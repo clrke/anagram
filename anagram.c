@@ -12,37 +12,6 @@ char tolower(char c) {
 		return c;
 }
 
-int anagram(char word1[50], char word2[50]);
-
-int main(int argc, char const *argv[])
-{
-	char retry[1];
-	char word1[50], word2[50];
-	do
-	{
-		printf("\n");
-
-		printf("Enter first word: ");
-		gets(word1);
-
-		printf("Enter second word: ");
-		gets(word2);
-
-		printf("Output: ");
-		if(anagram(word1, word2))
-			printf("Anagram!\n\n");
-		else
-			printf("Not Anagram!\n\n");
-
-		printf("Enter another? [y/n]: ");
-
-		gets(retry);
-
-	} while(tolower(retry[0]) == 'y');
-
-	return 0;
-}
-
 int anagram(char word1[50], char word2[50]) {
 	int i, j;
 	int word1_len = strlen(word1);
@@ -73,4 +42,33 @@ int anagram(char word1[50], char word2[50]) {
 			return false;
 
 	return true;
+}
+
+int main(int argc, char const *argv[])
+{
+	char retry[1];
+	char word1[50], word2[50];
+	do
+	{
+		printf("\n");
+
+		printf("Enter first word: ");
+		gets(word1);
+
+		printf("Enter second word: ");
+		gets(word2);
+
+		printf("Output: ");
+		if(anagram(word1, word2))
+			printf("Anagram!\n\n");
+		else
+			printf("Not Anagram!\n\n");
+
+		printf("Enter another? [y/n]: ");
+
+		gets(retry);
+
+	} while(tolower(retry[0]) == 'y');
+
+	return 0;
 }
